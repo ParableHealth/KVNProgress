@@ -582,7 +582,7 @@
 					"FB_REFERENCE_IMAGE_DIR=\"\\\"$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/ReferenceImages\\\"\"",
 				);
 				INFOPLIST_FILE = "KVNProgress/KVNProgress-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -605,7 +605,7 @@
 					"FB_REFERENCE_IMAGE_DIR=\"\\\"$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/ReferenceImages\\\"\"",
 				);
 				INFOPLIST_FILE = "KVNProgress/KVNProgress-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

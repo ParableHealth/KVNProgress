@@ -1320,17 +1320,16 @@ static KVNProgressConfiguration *configuration;
 
 - (UIImage *)blurredScreenShotWithRect:(CGRect)rect
 {
-	UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
-	
-	[self.originalKeyWindow drawViewHierarchyInRect:rect afterScreenUpdates:NO];
-	UIImage *blurredScreenShot = UIGraphicsGetImageFromCurrentImageContext();
-	
-	UIGraphicsEndImageContext();
-	
-	blurredScreenShot = [self applyTintEffectWithColor:self.configuration.backgroundTintColor
-												 image:blurredScreenShot];
-	
-	return blurredScreenShot;
+    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:rect.size];
+        
+    UIImage *blurredScreenShot = [renderer imageWithActions:^(UIGraphicsImageRendererContext *context) {
+        [self.originalKeyWindow drawViewHierarchyInRect:rect afterScreenUpdates:NO];
+    }];
+    
+    blurredScreenShot = [self applyTintEffectWithColor:self.configuration.backgroundTintColor
+                                                 image:blurredScreenShot];
+    
+    return blurredScreenShot;
 }
 
 - (UIImage *)applyTintEffectWithColor:(UIColor *)tintColor
